@@ -1,13 +1,8 @@
 import { AbsoluteCenter, Box, Button, Center, Flex, Heading, Image, Link, Text, VStack, chakra } from "@chakra-ui/react";
-import { Cascadia_Mono } from "next/font/google";
 import { useState } from "react";
 import Questions from "@/jswtf.json";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { solarizedDarkAtom } from 'react-syntax-highlighter/dist/esm/styles/prism';
-
-const cascadiaMono = Cascadia_Mono({
-  subsets: ["latin"]
-});
+import codeTheme from 'react-syntax-highlighter/dist/esm/styles/prism/solarized-dark-atom';
 
 export default function Home() {
   const [questionNumber, setQuestionNumber] = useState(0);
@@ -17,10 +12,10 @@ export default function Home() {
   return (
     <>
       {questionNumber === 0 && (
-        <AbsoluteCenter className={cascadiaMono.className}>
+        <AbsoluteCenter>
           <VStack>
-            <Heading fontSize="6xl" position="relative" fontWeight="bold">
-              <chakra.span color="array">{"[ ] "}</chakra.span>
+            <Heading fontSize="6xl" position="relative" fontWeight="bold" className="cascadia-mono">
+              <chakra.span color="array">{"[] "}</chakra.span>
               <chakra.span color="symbol">+</chakra.span>
               <chakra.span color="string">{" \"wtf\""}</chakra.span>
 
@@ -63,10 +58,9 @@ export default function Home() {
         <Flex
           direction="column"
           alignItems="center"
-          className={cascadiaMono.className}
           padding={5}
         >
-          <Text fontSize="sm" color="gray.400">Question {questionNumber}/{Questions.length}</Text>
+          <Text color="gray.400" className="corbel">Question {questionNumber}/{Questions.length}</Text>
 
           <Center
             textAlign="center"
@@ -78,7 +72,7 @@ export default function Home() {
             width="30vw"
           >
             {/* <Text>{Questions[questionNumber - 1].question}</Text> */}
-            <SyntaxHighlighter language="javascript" style={solarizedDarkAtom} customStyle={{
+            <SyntaxHighlighter language="javascript" style={codeTheme} customStyle={{
               background: "transparent",
               width: "max-content",
               fontSize: "16px"
@@ -96,7 +90,7 @@ export default function Home() {
           )}
 
 
-          <VStack width="30vw" gap={2} mt={5}>
+          <VStack width="30vw" gap={2} mt={5} className="cascadia-mono">
             {Questions[questionNumber - 1].choices.map((choice, index) => (
               <Button
                 key={index}
@@ -145,14 +139,14 @@ export default function Home() {
       )}
 
       {questionNumber > Questions.length && (
-        <AbsoluteCenter className={cascadiaMono.className}>
+        <AbsoluteCenter>
           <VStack>
-            <Heading fontSize="6xl" fontWeight="bold">
+            <Heading fontSize="6xl" fontWeight="bold" className="cascadia-mono">
               <chakra.span color="array">{"[ ] "}</chakra.span>
               <chakra.span color="symbol">+</chakra.span>
               <chakra.span color="string">{" \"Quiz Completed!\""}</chakra.span>
             </Heading>
-            <Text fontSize="2xl" color="gray.400" mt={4}>
+            <Text fontSize="2xl" color="gray.400" mt={4} className="corbel">
               You answered {correctAnswers} out of {Questions.length} questions correctly!
             </Text>
           </VStack>
