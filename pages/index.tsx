@@ -1,8 +1,8 @@
 import { AbsoluteCenter, Box, Button, Center, Flex, Heading, Image, Link, Text, VStack, chakra } from "@chakra-ui/react";
 import { useState } from "react";
 import Questions from "@/lib/jswtf";
-// import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-// import codeTheme from 'react-syntax-highlighter/dist/esm/styles/prism/solarized-dark-atom';
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import codeTheme from 'react-syntax-highlighter/dist/cjs/styles/prism/atom-dark';
 
 export default function Home() {
   const [questionNumber, setQuestionNumber] = useState(0);
@@ -71,14 +71,14 @@ export default function Home() {
             rounded="lg"
             width="30vw"
           >
-            <Text>{Questions[questionNumber - 1].question}</Text>
-            {/* <SyntaxHighlighter language="javascript" style={codeTheme} customStyle={{
+            {/* <Text>{Questions[questionNumber - 1].question}</Text> */}
+            <SyntaxHighlighter language="javascript" style={codeTheme} customStyle={{
               background: "transparent",
               width: "max-content",
               fontSize: "16px"
             }}>
               {Questions[questionNumber - 1].question}
-            </SyntaxHighlighter> */}
+            </SyntaxHighlighter>
           </Center>
 
           {userAnswer !== undefined && (
