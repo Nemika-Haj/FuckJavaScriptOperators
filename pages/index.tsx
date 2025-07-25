@@ -1,6 +1,6 @@
 import { AbsoluteCenter, Box, Button, Center, Flex, Heading, Image, Link, Text, VStack, chakra } from "@chakra-ui/react";
 import { useState } from "react";
-import Questions from "@/jswtf.json";
+import Questions from "@/lib/jswtf";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import codeTheme from 'react-syntax-highlighter/dist/esm/styles/prism/solarized-dark-atom';
 
