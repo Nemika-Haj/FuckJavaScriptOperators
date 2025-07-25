@@ -3,6 +3,7 @@ import { useState } from "react";
 import Questions from "@/lib/jswtf";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import codeTheme from 'react-syntax-highlighter/dist/cjs/styles/prism/atom-dark';
+import Head from "next/head";
 
 export default function Home() {
   const [questionNumber, setQuestionNumber] = useState(0);
@@ -11,6 +12,14 @@ export default function Home() {
 
   return (
     <>
+      <Head>
+        <title>Fuck JS Operations</title>
+      </Head>
+
+      <a href="https://github.com/Nemika-Haj/FuckJavaScriptOperators">
+        <Image position="absolute" top={0} right={0} border={0} src="https://github.blog/wp-content/uploads/2008/12/forkme_right_orange_ff7600.png" alt="Fork me on GitHub" />
+      </a>
+
       {questionNumber === 0 && (
         <AbsoluteCenter>
           <VStack>
