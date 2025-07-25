@@ -3,7 +3,7 @@ import { Cascadia_Mono } from "next/font/google";
 import { useState } from "react";
 import Questions from "@/jswtf.json";
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import codeTheme from 'react-syntax-highlighter/dist/esm/styles/prism/solarized-dark-atom';
+import { solarizedDarkAtom } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const cascadiaMono = Cascadia_Mono({
   subsets: ["latin"]
@@ -78,7 +78,7 @@ export default function Home() {
             width="30vw"
           >
             {/* <Text>{Questions[questionNumber - 1].question}</Text> */}
-            <SyntaxHighlighter language="javascript" style={codeTheme} customStyle={{
+            <SyntaxHighlighter language="javascript" style={solarizedDarkAtom} customStyle={{
               background: "transparent",
               width: "max-content",
               fontSize: "16px"
