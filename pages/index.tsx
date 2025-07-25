@@ -153,7 +153,7 @@ export default function Home() {
         </AbsoluteCenter>
       )}
 
-      <Text position="absolute" bottom={2} left="50%" transform="translateX(-50%)" fontSize="sm">
+      <Text position="absolute" top={2} left={2} fontSize="sm">
         Inspired by <Link href="https://jsdate.wtf/" target="_blank" color="array">jsdate.wtf</Link> by <Link href="https://samwho.dev/" target="_blank" color="array">samwho</Link>. Created by <Link href="https://github.com/Nemika-Haj/" target="_blank" color="array">Nemika</Link> & <Link href="https://github.com/xZexiion/" target="_blank" color="array">xZexiion</Link>
       </Text>
     </>
